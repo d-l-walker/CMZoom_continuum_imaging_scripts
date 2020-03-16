@@ -1,1 +1,1 @@
-# CMZoom_continuum_imaging_scripts
+# CMZoom Continuum Imaging Scripts
