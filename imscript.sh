@@ -17,7 +17,7 @@ The script does the following:
   - Runs an IDL script (mir_output_to_miriad.pro) to output sideband data in .miriad format
   - For each .miriad file, edge channels are flagged and data are output as .UVFITS
   - Sourcename is converted into J2000 format to be used later in CASA
-  - Run_find_cont.py is executed in CASA to determine continuum channels for each files
+  - Run_find_cont.py is executed in CASA to determine continuum channels for each file
   - Run_tclean.py is executed in CASA to generate continuum mosaic from all data associated with the given region
 '
 
