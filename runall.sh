@@ -1,5 +1,10 @@
 #!/bin/bash
 
+: '
+This is essentially the master script for the survey imaging. It successively calls imscript.sh for every region in the survey
+along with the associated tracks, and runs the imaging procedure in order to obtain a mosaicked continuum image for every source.
+'
+
 ./imscript.sh G0.489+0.010 /reduction/czdata/final/final_cal/track3_final_DW.mir /reduction/czdata/final/final_cal/track4_final_DW.mir /reduction/czdata/final/final_cal/track5_final_DW.mir /reduction/czdata/final/final_cal/track21_final_if1_xl.mir /reduction/czdata/final/final_cal/track21_final_if2_xl.mir /reduction/czdata/final/final_cal/track22_final_DW.mir
 
 ./imscript.sh G0.412+0.052 /reduction/czdata/final/final_cal/track3_final_DW.mir /reduction/czdata/final/final_cal/track21_final_if1_xl.mir /reduction/czdata/final/final_cal/track21_final_if2_xl.mir
