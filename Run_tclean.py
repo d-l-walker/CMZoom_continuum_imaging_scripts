@@ -28,7 +28,11 @@ for filename in glob.iglob('*.fits'):
        else:
            continue
 
-### Generate averaged line-free, continuum datasets (else statement is a relic from before findContinuum had been fully implemented, and will flag a broad frequency range that should contain 12CO and 13CO, which are expected to be the dominant lines)
+""" 
+Generate averaged line-free, continuum datasets 
+(else statement is a relic from before findContinuum had been fully implemented, and will flag a broad frequency range 
+that should contain 12CO and 13CO, which are expected to be the dominant lines)
+"""
 #os.system("rm -rf *.cont.tclean.automultithresh.split2.avg.*")
 for filename in glob.iglob('*.ms'):
     if not os.path.exists(sourcename+'.cont.tclean.automultithresh.split2.avg.image'):
@@ -36,12 +40,10 @@ for filename in glob.iglob('*.ms'):
         t = os.path.splitext(filename)
         f = str(t[0])
         contvis=f+'.cont.split2.avg.ms'
-        print filename
 
         if os.path.exists(f+'.dirty.image_findContinuum.dat'):
             continuum_file = np.loadtxt(f+'.dirty.image_findContinuum.dat', dtype=str)[0]
             frange = '0:'+str(continuum_file)
-            print frange
             split2(vis=filename, outputvis=contvis, width=8, datacolumn='data',spw=frange)
         else:
             if 'lsb' in filename:
@@ -102,4 +104,4 @@ if not os.path.exists(sourcename+'.cont.tclean.automultithresh.newthreshold.spli
            savemodel          =  "none",
            pbcor = True)
 else:
-    print 'Woah! This region has been cleaned. It would be wasteful to do it again. Moving on to the next source ...'
+    print('Woah! This region has been cleaned. It would be wasteful to do it again. Moving on to the next source ...')
